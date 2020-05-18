@@ -1,5 +1,5 @@
 <h2 class="page-header">Search Books</h2>
-<form action="/books" method="GET">
+<form action="/books" method="GET" autocomplete="off">
     <div class="form-row">
         <div class="form-item">
           <label>Title</label>
@@ -21,10 +21,4 @@
     </div>
 </form>
 <br>
-<div>
-    <% books.forEach(book => { %>  
-        <a href="/books/<%= book.id %>">
-            <img height="150" width="100" src="<%- book.coverImagePath %>">
-        </a>
-    <% }) %>
-</div>
+<%- include('../partials/bookGrid', { books: books, large: true }) %>
